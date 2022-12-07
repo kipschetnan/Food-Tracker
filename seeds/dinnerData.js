@@ -24,6 +24,6 @@ const dinnerdata = [
   },
 ];
 
-const seedDinner = () => User.bulkCreate(dinnerdata);
+const seedDinner = () => Dinner.bulkCreate(dinnerdata);
 
 module.exports = seedDinner;

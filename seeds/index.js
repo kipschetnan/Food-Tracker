@@ -1,5 +1,8 @@
 const sequelize = require('../config/connection');
-const seedPosts = require('./postData');
+const seedBreakfast = require('./breakfastData');
+const seedLunch = require('./lunchData');
+const seedDinner = require('./dinnerData');
+const seedSnacks = require('./snacksData');
 const seedUser = require('./userData');
 
 const seedAll = async () => {
