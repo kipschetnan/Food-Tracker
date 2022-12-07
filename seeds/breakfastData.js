@@ -24,6 +24,6 @@ const brkfstdata = [
   },
 ];
 
-const seedBreakfast = () => User.bulkCreate(brkfstdata);
+const seedBreakfast = () => Breakfast.bulkCreate(brkfstdata);
 
 module.exports = seedBreakfast;
