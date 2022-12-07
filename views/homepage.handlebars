@@ -1,3 +1,23 @@
 <header>
     My Food Tracker
 </header>
+<div>
+    {{#each brkfst as |brk|}}
+    {{brk.name}}
+    {{/each}}
+</div>
+<div>
+    {{#each lunch as |lun|}}
+    {{lun.name}}
+    {{/each}}
+</div>
+<div>
+    {{#each dinner as |din|}}
+    {{din.name}}
+    {{/each}}
+</div>
+<div>
+    {{#each snacks as |snack|}}
+    {{snack.name}}
+    {{/each}}
+</div>
