@@ -7,7 +7,10 @@ router.post('/', async (req, res) => {
         const dbUserData = await User.create({
             username: req.body.username,
             password: req.body.password,
+            calorie_goal: req.body.calGoal,
         });
+        req.session.calGoal = dbUserData.calorie_goal
+        req.session.username = dbUserData.username
 
         req.session.save(() => {
             req.session.loggedIn = true;
@@ -22,7 +25,7 @@ router.post('/', async (req, res) => {
 
 // Login
 router.post('/login', async (req, res) => {
-    console.log('in login')
+    console.log('in login api')
 
     try {
         const dbUserData = await User.findOne({
@@ -44,6 +47,8 @@ router.post('/login', async (req, res) => {
         validPassword = passwd == req.body.password
         req.session.username = dbUserData.username
         req.session.userId = dbUserData.id
+        req.session.calGoal = dbUserData.calorie_goal
+
         console.log(dbUserData.id)
         console.log("Password from body is:", req.body.password)
         console.log("Valid password = ", validPassword)
