@@ -25,7 +25,7 @@ const breakfastFormHandler = async (event) => {
   
   document
     .querySelector('.add-brk-food')
-    .addEventListener('submit', loginFormHandler);
+    .addEventListener('submit', breakfastFormHandler);
 
 const lunchFormHandler = async (event) => {
     event.preventDefault();
@@ -54,7 +54,7 @@ const lunchFormHandler = async (event) => {
 
 document
     .querySelector('.add-lunch-food')
-    .addEventListener('submit', loginFormHandler);
+    .addEventListener('submit', lunchFormHandler);
 
 const dinnerFormHandler = async (event) => {
     event.preventDefault();
@@ -83,7 +83,7 @@ const dinnerFormHandler = async (event) => {
 
 document
     .querySelector('.add-dinner-food')
-    .addEventListener('submit', loginFormHandler);
+    .addEventListener('submit', dinnerFormHandler);
 
 const snacksFormHandler = async (event) => {
     event.preventDefault();
@@ -112,4 +112,4 @@ const snacksFormHandler = async (event) => {
 
 document
     .querySelector('.add-snacks-food')
-    .addEventListener('submit', loginFormHandler);
+    .addEventListener('submit', snacksFormHandler);
