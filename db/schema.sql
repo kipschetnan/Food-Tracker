@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS calorie_db;
+
+CREATE DATABASE calorie_db;

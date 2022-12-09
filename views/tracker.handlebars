@@ -1,0 +1,33 @@
+<header>    
+    <nav>
+        <button id="logout">Logout</button>
+    </nav>
+    <div>
+        My Food Tracker
+    </div>
+    <div>
+        Calorie Goal: {{calorieGoal}}/{{calGoal}}
+    </div>
+</header>
+<div>
+    {{#each brkfst as |brk|}}
+    {{brk.name}}
+    {{/each}}
+</div>
+<div>
+    {{#each lunch as |lun|}}
+    {{lun.name}}
+    {{/each}}
+</div>
+<div>
+    {{#each dinner as |din|}}
+    {{din.name}}
+    {{/each}}
+</div>
+<div>
+    {{#each snacks as |snack|}}
+    {{snack.name}}
+    {{/each}}
+</div>
+
+<script src="/js/logout.js"></script>
