@@ -4,6 +4,10 @@ const Breakfast = require('../models/Breakfast')
 const Lunch = require('../models/Lunch')
 const Snacks = require('../models/Snacks')
 const Dinner = require('../models/Dinner')
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op;
+
+const {format_date} = require('../utils/helpers')
 
 router.get('/', async (req, res) => {
     try {
@@ -22,13 +26,21 @@ router.get('/tracker', async (req, res) => {
     console.log(req.session.userId)
     console.log(req.session.calGoal)
     let calorieGoal = 0
+    const TODAY_START = new Date().setHours(0, 0, 0, 0);
+    const NOW = new Date();
     try {
         const brkfstData = await Breakfast.findAll({
+            where: {
+                created_at: { 
+                  [Op.gt]: TODAY_START,
+                  [Op.lt]: NOW
+                },
+            },
             include: [
                 {
                     model: User,
                     where: {
-                        id: req.session.userId
+                        id: req.session.userId,
                     }
                 }
             ]
@@ -39,6 +51,12 @@ router.get('/tracker', async (req, res) => {
         });
 
         const lunchData = await Lunch.findAll({
+            where: {
+                createdAt: { 
+                  [Op.gt]: TODAY_START,
+                  [Op.lt]: NOW
+                },
+            },
             include: [
                 {
                     model: User,
@@ -54,6 +72,12 @@ router.get('/tracker', async (req, res) => {
         });
 
         const dinnerData = await Dinner.findAll({
+            where: {
+                created_at: { 
+                  [Op.gt]: TODAY_START,
+                  [Op.lt]: NOW
+                },
+            },
             include: [
                 {
                     model: User,
@@ -69,6 +93,12 @@ router.get('/tracker', async (req, res) => {
         });
 
         const snacksData = await Snacks.findAll({
+            where: {
+                createdAt: { 
+                  [Op.gt]: TODAY_START,
+                  [Op.lt]: NOW
+                },
+            },
             include: [
                 {
                     model: User,
