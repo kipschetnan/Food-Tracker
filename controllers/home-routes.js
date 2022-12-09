@@ -111,4 +111,40 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
+router.get('/breakfast', (req, res) => {
+    if (req.session.loggedIn) {
+        res.render('brkfstFood');
+        return;
+    } else {
+        res.redirect('/login')
+    }
+})
+
+router.get('/dinner', (req, res) => {
+    if (req.session.loggedIn) {
+        res.render('dinnerFood');
+        return;
+    } else {
+        res.redirect('/login')
+    }
+})
+
+router.get('/snacks', (req, res) => {
+    if (req.session.loggedIn) {
+        res.render('snackFood');
+        return;
+    } else {
+        res.redirect('/login')
+    }
+})
+
+router.get('/lunch', (req, res) => {
+    if (req.session.loggedIn) {
+        res.render('lunchFood');
+        return;
+    } else {
+        res.redirect('/login')
+    }
+})
+
 module.exports = router
