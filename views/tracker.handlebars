@@ -1,4 +1,4 @@
-<header>    
+{{!-- <header>    
     <nav>
         <button id="logout">Logout</button>
     </nav>
@@ -9,26 +9,133 @@
         Calorie Goal: {{calorieGoal}}/{{calGoal}}
     </div>
 </header>
-<div>
+<div>Breakfast:
     {{#each brkfst as |brk|}}
-    {{brk.name}}
+     {{brk.name}}
     {{/each}}
 
 </div>
-<div>
+<div>Lunch:
     {{#each lunch as |lun|}}
-    {{lun.name}}
+     {{lun.name}}
     {{/each}}
 </div>
-<div>
+<div>Dinner:
     {{#each dinner as |din|}}
-    {{din.name}}
+     {{din.name}}
     {{/each}}
 </div>
-<div>
+<div>Snacks:
     {{#each snacks as |snack|}}
-    {{snack.name}}
+     {{snack.name}}
     {{/each}}
-</div>
+</div> --}}
+
+    <div class="wrapper">
+        <div class="container">
+
+            <!-- Navigation -->
+
+            <nav class="navbar">
+
+                <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="/login" class="nav-link" >Logout</a>
+                    </li>
+                    
+                </ul>
+                
+            </nav>
+            
+            <!-- Main -->
+
+            <section class="main">
+                <h1 id="title">My Food Tracker</h1>
+            </section>
+
+            <div class="">
+
+            </div>
+
+            <div class="p-10">  
+                <!--Card 1-->
+                <div class="h-max bg-gray-50 max-w-sm rounded overflow-hidden shadow-lg">
+                 <img class="min-w-full" src="/food icons/breakfast.png" alt="Breakfast">
+                  <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Breakfast</div>
+                    <p class="text-gray-700 text-base">
+                    
+                    </p>
+                  </div>
+                  <div class="px-6 pt-4 pb-2">
+                    <div class=" bg-slate-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Total Calories:</div>
+                    <div class=" bg-slate-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Fats:</div>
+                    <div class=" bg-slate-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Carbs:</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-10">  
+                <!--Card 2-->
+                <div class="h-max bg-gray-50 max-w-sm rounded overflow-hidden shadow-lg">
+                    <img class="min-w-full" src="/food icons/lunch.png" alt="Lunch">
+                  <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Lunch</div>
+                    <p class="text-gray-700 text-base">
+                    
+                    </p>
+                  </div>
+                  <div class="px-6 pt-4 pb-2">
+                    <div class="bg-slate-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Total Calories:</div>
+                    <div class="bg-slate-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Fats:</div>
+                    <div class="bg-slate-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Carbs:</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-10">  
+                <!--Card 3-->
+                <div class="h-fit bg-gray-50 max-w-sm rounded overflow-hidden shadow-lg">
+                    <img class="min-w-full" src="/food icons/dinner.png" alt="Dinner">
+                  <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Dinner</div>
+                    <p class="text-gray-700 text-base">
+                    
+                    </p>
+                  </div>
+                  <div class="px-6 pt-4 pb-2">
+                    <div class="bg-slate-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Total Calories:</div>
+                    <div class="bg-slate-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Fats:</div>
+                    <div class="bg-slate-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Carbs:</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-10">  
+                <!--Card 4-->
+                <div class="min-h-fit bg-gray-50 max-w-sm rounded overflow-hidden shadow-lg">
+                    <img class="min-w-full" src="/food icons/snack.png" alt="Snacks">
+                  <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Snacks</div>
+                    <p class="text-gray-700 text-base">
+                    
+                    </p>
+                  </div>
+                  <div class="px-6 pt-4 pb-2">
+                    <div class="bg-slate-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Total Calories:</div>
+                    <div class="bg-slate-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Fats:</div>
+                    <div class="bg-slate-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Carbs:</div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+<script src="script.js"></script>
 
 <script src="/js/logout.js"></script>
