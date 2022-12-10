@@ -114,6 +114,7 @@ router.get('/tracker', async (req, res) => {
         });
 
         res.render('tracker', {
+            loggedIn: req.session.loggedIn,
             brkfst,
             lunch,
             dinner,
