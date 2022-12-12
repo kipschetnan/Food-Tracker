@@ -26,6 +26,21 @@ router.get('/tracker', async (req, res) => {
     console.log(req.session.userId)
     console.log(req.session.calGoal)
     let calorieGoal = 0
+    let brkfstCals = 0
+    let brkfstFats = 0
+    let brkfstCarbs = 0
+
+    let lunchCals = 0
+    let lunchFats = 0
+    let lunchCarbs = 0
+
+    let dinnerCals = 0
+    let dinnerFats = 0
+    let dinnerCarbs = 0
+
+    let snacksCals = 0
+    let snacksFats = 0
+    let snacksCarbs = 0
     const TODAY_START = new Date().setHours(0, 0, 0, 0);
     const NOW = new Date();
     try {
@@ -48,6 +63,9 @@ router.get('/tracker', async (req, res) => {
         const brkfst = brkfstData.map((brk) => brk.get({ plain: true }))
         brkfst.forEach(brk => {
             calorieGoal += brk.calories
+            brkfstCals += brk.calories
+            brkfstCarbs += brk.carbs
+            brkfstFats += brk.fats
         });
 
         const lunchData = await Lunch.findAll({
@@ -69,6 +87,9 @@ router.get('/tracker', async (req, res) => {
         const lunch = lunchData.map((lun) => lun.get({ plain: true }))
         lunch.forEach(lun => {
             calorieGoal += lun.calories
+            lunchCals += lun.calories
+            lunchCarbs += lun.carbs
+            lunchFats += lun.fats
         });
 
         const dinnerData = await Dinner.findAll({
@@ -90,6 +111,9 @@ router.get('/tracker', async (req, res) => {
         const dinner = dinnerData.map((din) => din.get({ plain: true }))
         dinner.forEach(din => {
             calorieGoal += din.calories
+            dinnerCals += din.calories
+            dinnerCarbs += din.carbs
+            dinnerFats += din.fats
         });
 
         const snacksData = await Snacks.findAll({
@@ -111,14 +135,25 @@ router.get('/tracker', async (req, res) => {
         const snacks = snacksData.map((snack) => snack.get({ plain: true }))
         snacks.forEach(snack => {
             calorieGoal += snack.calories
+            snacksCals += snack.calories
+            snacksCarbs += snack.carbs
+            snacksFats += snack.fats
         });
 
         res.render('tracker', {
             loggedIn: req.session.loggedIn,
-            brkfst,
-            lunch,
-            dinner,
-            snacks,
+            brkfstCals,
+            brkfstCarbs,
+            brkfstFats,
+            lunchCals,
+            lunchCarbs,
+            lunchFats,
+            dinnerCals,
+            dinnerCarbs,
+            dinnerFats,
+            snacksCals,
+            snacksCarbs,
+            snacksFats,
             calGoal: req.session.calGoal,
             calorieGoal,
         })
