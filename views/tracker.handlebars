@@ -30,7 +30,7 @@
      {{snack.name}}
     {{/each}}
 </div> --}}
-
+<link rel="stylesheet" href="/css/trackerStyles.css">
     <div class="wrapper">
         <div class="container">
 
@@ -57,7 +57,7 @@
 
             <section class="main">
                 <h1 id="title">My Food Tracker</h1>
-                <h2 id="calGoal">Calorie Goal: <progress max="{{calGoal}}" value="{{calorieGoal}}"></progress> {{calorieGoal}}/{{calGoal}}</h2>
+                <h2 id="calGoal">Calorie Goal: <progress id="goalProgress" max="{{calGoal}}" value="{{calorieGoal}}"></progress> {{calorieGoal}}/{{calGoal}}</h2>
             </section>
 
             <div class="">
