@@ -12,6 +12,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .login-form {
@@ -25,13 +26,14 @@
     font-size: 33px;
     font-weight: 500;
     font-family: 'Poppins', sans-serif;
+    
 }
 
 .login-container {
     background-color: white;
     padding: 30px;
     width: 70%;
-    height: 30vh;
+    height: 36vh;
     border-radius: 10px;
     box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
     display: flex;
@@ -67,6 +69,9 @@
     cursor: pointer;
 }
 
+#registerLink {
+    color: Blue;
+}
 
 input {
     width: 100%;
@@ -82,6 +87,44 @@ input {
     .container {
         width: 40%;
     }
+ 
+}
+
+
+@media only screen and (min-width: 500px) {
+    .container {
+        width: 40%;
+    }
 
     
 }
+
+@media only screen and (max-height: 750px) {
+    .login-container {
+        height: 44vh;
+    }
+
+    .container {
+        width: 100%;
+    }
+    
+}
+
+@media only screen and (max-height: 655px) {
+    .login-container {
+        height: 44vh;
+        width: 100%;
+    }
+
+    .container {
+        width: 80%;
+    }
+    
+    .welcome {
+        font-size: 26px;
+    }
+
+}
+
+
+
