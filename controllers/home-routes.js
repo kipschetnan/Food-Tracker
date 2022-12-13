@@ -41,15 +41,20 @@ router.get('/tracker', async (req, res) => {
     let snacksCals = 0
     let snacksFats = 0
     let snacksCarbs = 0
-    const TODAY_START = new Date().setHours(0, 0, 0, 0);
+    const TODAY_START_UNIX = new Date().setHours(0, 0, 0, 0);
     const NOW = new Date();
+    const TODAY_END_UNIX = new Date().setHours(23, 59, 59, 999)
+    const TODAY_START = new Date(TODAY_START_UNIX).toISOString()
+    const TODAY_END = new Date(TODAY_END_UNIX).toISOString()
+
     if(req.session.loggedIn) {
         try {
             const brkfstData = await Breakfast.findAll({
                 where: {
                     created_at: { 
-                      [Op.gt]: TODAY_START,
-                      [Op.lt]: NOW
+                    //   [Op.gt]: TODAY_START,
+                    //   [Op.lt]: NOW
+                        [Op.between]: [TODAY_START, TODAY_END]
                     },
                 },
                 include: [
