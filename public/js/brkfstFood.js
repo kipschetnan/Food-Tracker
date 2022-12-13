@@ -23,7 +23,7 @@ const breakfastFormHandler = async (event) => {
     }
 };
 
-document.querySelector('#addBrkFoodBtn').addEventListener('click', breakfastFormHandler);
+document.querySelector('#addButton').addEventListener('click', breakfastFormHandler);
 
 
 

@@ -23,4 +23,4 @@ const dinnerFormHandler = async (event) => {
     }
 };
 
-document.querySelector('#addDinnerFoodBtn').addEventListener('click', dinnerFormHandler);
+document.querySelector('#addButton').addEventListener('click', dinnerFormHandler);

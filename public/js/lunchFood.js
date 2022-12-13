@@ -23,4 +23,4 @@ const lunchFormHandler = async (event) => {
     }
 };
 
-document.querySelector('#addLunchFoodBtn').addEventListener('click', lunchFormHandler);
+document.querySelector('#addButton').addEventListener('click', lunchFormHandler);
