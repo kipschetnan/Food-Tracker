@@ -7,7 +7,7 @@ const Dinner = require('../models/Dinner')
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op;
 
-const {format_date} = require('../utils/helpers')
+const {format_date, percentage} = require('../utils/helpers')
 
 router.get('/', async (req, res) => {
     try {
@@ -140,7 +140,6 @@ router.get('/tracker', async (req, res) => {
                 snacksCarbs += snack.carbs
                 snacksFats += snack.fats
             });
-    
             res.render('tracker', {
                 loggedIn: req.session.loggedIn,
                 brkfstCals,
@@ -157,6 +156,7 @@ router.get('/tracker', async (req, res) => {
                 snacksFats,
                 calGoal: req.session.calGoal,
                 calorieGoal,
+                percent: percentage(calorieGoal, req.session.calGoal)
             })
     
         } catch (err) {
