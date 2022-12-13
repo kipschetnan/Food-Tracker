@@ -9,11 +9,13 @@ router.post('/', async (req, res) => {
             password: req.body.password,
             calorie_goal: req.body.calGoal,
         });
-        req.session.calGoal = dbUserData.calorie_goal
-        req.session.username = dbUserData.username
+        
 
         req.session.save(() => {
             req.session.loggedIn = true;
+            req.session.calGoal = dbUserData.calorie_goal
+            req.session.username = dbUserData.username
+            req.session.userId = dbUserData.id
 
             res.status(200).json(dbUserData);
         });
@@ -42,12 +44,8 @@ router.post('/login', async (req, res) => {
             return;
         }
 
-        const passwd = await dbUserData.password
-
-        validPassword = passwd == req.body.password
-        req.session.username = dbUserData.username
-        req.session.userId = dbUserData.id
-        req.session.calGoal = dbUserData.calorie_goal
+        validPassword = await dbUserData.checkPassword(req.body.password)
+        
 
         console.log(dbUserData.id)
         console.log("Password from body is:", req.body.password)
@@ -62,6 +60,9 @@ router.post('/login', async (req, res) => {
 
         req.session.save(() => {
             req.session.loggedIn = true;
+            req.session.username = dbUserData.username
+            req.session.userId = dbUserData.id
+            req.session.calGoal = dbUserData.calorie_goal
 
             res
                 .status(200)

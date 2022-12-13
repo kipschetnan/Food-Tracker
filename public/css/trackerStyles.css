@@ -87,8 +87,9 @@
 .main {
     color: white;
     font-weight: 100;
-    
-    
+    font-size: 30px;
 }
 
-
+.p-10 {
+    padding: 30px 30px 30px 30px;
+}
