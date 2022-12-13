@@ -23,4 +23,4 @@ const snacksFormHandler = async (event) => {
     }
 };
 
-document.querySelector('#addSnacksFoodBtn').addEventListener('click', snacksFormHandler);
+document.querySelector('#addButton').addEventListener('click', snacksFormHandler);

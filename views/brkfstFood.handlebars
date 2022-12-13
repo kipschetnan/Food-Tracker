@@ -1,6 +1,14 @@
-<div class="row justify-space-between-md">
-  <div class="brkfst-card">
-    <div><a href="/tracker">Back to tracker</a></div>
+<link rel="stylesheet" href="/css/foodInput.css">
+
+
+<div class="wrapper">
+  <div class="row justify-space-between-md">
+  <div class="card">
+    <div id="back">
+      <img src="/images/arrow-left.png" alt="back-arrow">
+      <a id="link" href="/tracker">Back to tracker</a>
+    </div>
+
       <div class="form-group">
         <label for="brkfst-food" id="">Name of Food:</label>
         <input class="form-input" type="text" id="brk-foodName" />
@@ -18,8 +26,11 @@
         <input class="form-input" type="text" id="brk-fats" />
       </div>
       <div class="form-group">
-        <button class="btn btn-primary" id="addBrkFoodBtn">Add Food</button>
+        <button class="btn btn-primary" id="addButton">Add Food</button>
       </div>
   </div>
+</div>
+
+
 
 <script src="/js/brkfstFood.js"></script>

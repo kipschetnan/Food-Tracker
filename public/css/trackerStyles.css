@@ -11,7 +11,7 @@
 .wrapper {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(#648880, #293f50);
+    background: linear-gradient(#8B939A, #667e85);
 }
 
 .container {
@@ -92,4 +92,17 @@
 
 .p-10 {
     padding: 30px 30px 30px 30px;
+}
+
+#logout {
+    color: white;
+}
+
+#logout:hover {
+    color: #b9cbda;
+}
+
+#card1 {
+    background: linear-gradient(#b5c6e0, #ebf4f5) ;
+    
 }
