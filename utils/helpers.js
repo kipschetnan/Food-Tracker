@@ -7,4 +7,7 @@ module.exports = {
   format_date: (date) => {
     return format(date, 'MM/dd/yyyy')
   },
+  percentage: (max, min) => {
+    return (max/min)*100
+  }
 };
