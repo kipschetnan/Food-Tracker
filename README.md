@@ -10,3 +10,10 @@ Here is the link to the application deployed to Heroku: https://serene-taiga-186
 ## Screenshots
 
 Below is a couple of screenshots showing the login page, home tracker page, and add food form.
+
+
+![Screenshot 2022-12-13 at 7 11 54 PM (2)](https://user-images.githubusercontent.com/110855018/207481028-cb464afc-354f-4c10-ab5e-caa1d5cdcc12.png)
+
+![Screenshot 2022-12-13 at 7 12 13 PM (2)](https://user-images.githubusercontent.com/110855018/207481042-47591a55-a3a7-4037-8c25-fa90cb8bf930.png)
+
+![Screenshot 2022-12-13 at 7 12 19 PM (2)](https://user-images.githubusercontent.com/110855018/207481050-0f7b9cd8-a118-4d73-80ee-ba2872025002.png)
